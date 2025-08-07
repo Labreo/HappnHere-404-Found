@@ -7,6 +7,7 @@ Goa’s vibrant and diverse event scene is often fragmented and under-promoted. 
 ## Teammates
 
 [Link to Gracy's Github](https://github.com/gracyntaxx)
+
 [Link to Kanak's Github](https://github.com/Labreo)
 
 ## Tech Stack
