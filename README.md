@@ -12,6 +12,10 @@ Goa’s vibrant and diverse event scene is often fragmented and under-promoted. 
 
 [Link to Ruben's Github](https://github.com/Rub3n404)
 
+[Link to Pranav's Github](https://github.com/pranavbhat55)
+
+[Link to Flavia's Github](https://github.com/flavia2706)
+
 ## Tech Stack
 
 [TBD]
