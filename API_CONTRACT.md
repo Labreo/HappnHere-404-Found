@@ -187,6 +187,30 @@
 
 ---
 
+**Feature:** Update Profile
+**Method:** PUT
+**Endpoint:** `/api/users/me`
+**Description:** Update logged-in user’s profile.
+**Request Body:**
+
+```json
+{
+  "name": "John D.",
+  "profile_pic": "https://example.com/newpic.jpg",
+  "interests": ["music", "food"]
+}
+```
+
+**Success Response (200):**
+
+```json
+{
+  "message": "Profile updated successfully"
+}
+```
+
+---
+
 ### **Events**
 
 **Feature:** Get All Events
@@ -206,6 +230,27 @@
     "price": 200
   }
 ]
+```
+
+---
+
+**Feature:** Get Event by ID
+**Method:** GET
+**Endpoint:** `/api/events/{id}`
+**Description:** Retrieve details of a single event.
+**Success Response (200):**
+
+```json
+{
+  "id": 1,
+  "title": "Goa Food Festival",
+  "description": "Taste the best dishes in Goa!",
+  "category": "Food",
+  "location": "Panaji",
+  "date_time": "2025-08-20T18:00:00",
+  "price": 200,
+  "attendees": [12, 45, 67]
+}
 ```
 
 ---
@@ -246,7 +291,102 @@
 
 ---
 
-*(Continue similarly for join event, get event by ID, follow clubs, etc.)*
+**Feature:** Update Event
+**Method:** PUT
+**Endpoint:** `/api/events/{id}`
+**Description:** Update an existing event (organizer only).
+**Request Body:**
+
+```json
+{
+  "title": "Goa Food Fest - Updated",
+  "price": 250
+}
+```
+
+**Success Response (200):**
+
+```json
+{
+  "message": "Event updated successfully"
+}
+```
+
+---
+
+**Feature:** Delete Event
+**Method:** DELETE
+**Endpoint:** `/api/events/{id}`
+**Description:** Delete an event (organizer only).
+**Success Response (200):**
+
+```json
+{
+  "message": "Event deleted successfully"
+}
+```
+
+---
+
+**Feature:** Join Event
+**Method:** POST
+**Endpoint:** `/api/events/{id}/join`
+**Description:** RSVP to an event.
+**Success Response (200):**
+
+```json
+{
+  "message": "Successfully joined the event"
+}
+```
+
+---
+
+### **Clubs & Communities**
+
+**Feature:** Get All Clubs
+**Method:** GET
+**Endpoint:** `/api/clubs`
+**Description:** Retrieve list of all clubs/communities.
+
+---
+
+**Feature:** Follow Club
+**Method:** POST
+**Endpoint:** `/api/clubs/{id}/follow`
+**Description:** Follow a club to get updates.
+
+---
+
+**Feature:** Create Club
+**Method:** POST
+**Endpoint:** `/api/clubs`
+**Description:** Create a new club/community.
+
+---
+
+### **Notifications**
+
+**Feature:** Get Notifications
+**Method:** GET
+**Endpoint:** `/api/notifications`
+**Description:** Retrieve all notifications for logged-in user.
+
+---
+
+### **Payments**
+
+**Feature:** Create Payment
+**Method:** POST
+**Endpoint:** `/api/payments`
+**Description:** Initiate payment for a paid event.
+
+---
+
+**Feature:** Payment Confirmation
+**Method:** GET
+**Endpoint:** `/api/payments/{id}/status`
+**Description:** Retrieve payment status.
 
 ---
 
@@ -261,9 +401,3 @@
 }
 ```
 
----
-
-
-
-If you want, I can also **finish the remaining endpoints list** so your file is 100% complete before committing — that way your teammates won’t need to fill in much.
-Do you want me to do that now so you just copy-paste?
